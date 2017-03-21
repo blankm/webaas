@@ -1,0 +1,38 @@
+{
+	"@context": ["http://w3c.github.io/wot/w3c-wot-td-context.jsonld"],
+	"@type": "Thing",
+	"name": "webAAS",
+	"interactions": [       
+		{
+      "@type": "Action",
+      "name": "createPVSL",
+			"inputData": 
+				{
+					"valuetype": {
+						"type":"object",
+						"properties": 
+						{
+							"PVSLName": {
+								"valuetype": {
+									"type":"string",
+									"minLength": 1
+								}
+							},
+							"CarrierId": {
+								"valuetype": {
+									"type":"integer",
+									"minimum": 1
+								}
+							}
+						},
+						"required": ["PVSLName", "CarrierId"]						
+					}
+				},						     
+      "links": [{
+        "href" : "coap://webaas.sytes.net:5686/webaas/createpvsl",
+        "mediaType": "application/json"
+        }]
+    }
+		
+  ]
+}
